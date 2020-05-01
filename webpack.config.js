@@ -18,7 +18,7 @@ module.exports = (env, argv) => {
 		watchOptions: {
 			ignored: /node_modules/
 		},
-		devtool: !isProduction ? 'source-map' : 'none',
+		devtool: !isProduction ? 'inline-source-map' : 'none',
 		output: {
 			path: path.resolve(__dirname, './public/build/assets/'),
 			publicPath: '/build/assets/',
@@ -28,7 +28,7 @@ module.exports = (env, argv) => {
 		module: {
 			rules: [
 				{
-					test: /\.js$/,
+					test: /\.(js|ts)$/,
 					include: path.resolve(__dirname, './front'),
 					use: [
 						{
@@ -74,6 +74,7 @@ module.exports = (env, argv) => {
 			]
 		},
 		resolve: {
+			extensions: ['.ts', '.js', '.css'],
 			alias: {
 				shared: path.resolve(__dirname, './front/shared')
 			}

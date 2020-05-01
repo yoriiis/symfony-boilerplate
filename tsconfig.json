@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"outDir": "./public/build/types/",
+		"allowJs": true,
+		"sourceMap": false,
+		"checkJs": true,
+		"module": "es6",
+		"target": "es5",
+		"lib": ["es2017"],
+		"strict": true,
+		"declaration": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true
+	},
+	"types": ["node"],
+	"include": ["./front/**/*.ts"],
+	"exclude": ["node_modules", "./front/**/__tests__", "./src/**/__mocks__"]
+}

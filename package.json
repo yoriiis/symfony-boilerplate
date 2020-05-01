@@ -12,17 +12,21 @@
 	],
 	"scripts": {
 		"build": "rm -rf ./web/dist/ && webpack --mode=production",
+		"build:types": "tsc --emitDeclarationOnly",
 		"start": "rm -rf ./web/dist/ && webpack --mode=development",
 		"test": "jest",
 		"test:coverage": "jest --coverage",
 		"test:eslint": "eslint . --ignore-pattern dist --ignore-pattern vendor --ignore-pattern public",
 		"test:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore vendor",
 		"test:stylelint": "stylelint './front/**/*.css'",
-		"test:watch": "jest --watchAll --coverage"
+		"test:type-check": "tsc --noEmit",
+		"test:watch": "jest --watchAll --coverage",
+		"type-check:watch": "npm run type-check -- --watch"
 	},
 	"babel": {
 		"plugins": [
-			"babel-plugin-dynamic-import-node"
+			"babel-plugin-dynamic-import-node",
+			"@babel/proposal-class-properties"
 		],
 		"presets": [
 			[
@@ -32,6 +36,9 @@
 						"node": "12.14.0"
 					}
 				}
+			],
+			[
+				"@babel/typescript"
 			]
 		]
 	},
@@ -111,7 +118,9 @@
 	"dependencies": {},
 	"devDependencies": {
 		"@babel/core": "^7.9.0",
+		"@babel/plugin-proposal-class-properties": "^7.8.3",
 		"@babel/preset-env": "^7.9.5",
+		"@babel/preset-typescript": "^7.9.0",
 		"babel-eslint": "^10.1.0",
 		"babel-loader": "^8.1.0",
 		"babel-plugin-dynamic-import-node": "^2.3.3",
@@ -144,6 +153,8 @@
 		"stylelint-config-standard": "^20.0.0",
 		"svg-inline-loader": "^0.8.2",
 		"terser-webpack-plugin": "^2.3.5",
+		"ts-loader": "^7.0.2",
+		"typescript": "^3.8.3",
 		"webpack": "^4.43.0",
 		"webpack-cli": "^3.3.11",
 		"webpack-manifest-plugin": "^2.2.0"

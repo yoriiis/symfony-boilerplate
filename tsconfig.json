@@ -15,5 +15,5 @@
 	},
 	"types": ["node"],
 	"include": ["./front/**/*.ts"],
-	"exclude": ["node_modules", "./front/**/__tests__", "./src/**/__mocks__"]
+	"exclude": ["./front/**/__tests__", "./front/**/__mocks__"]
 }

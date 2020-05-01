@@ -7,9 +7,6 @@
 	"repository": "https://github.com/yoriiis/symfony-boilerplate.git",
 	"license": "MIT",
 	"author": "Yoriiis aka Joris DANIEL",
-	"files": [
-		"web"
-	],
 	"scripts": {
 		"build": "rm -rf ./web/dist/ && webpack --mode=production",
 		"build:types": "tsc --emitDeclarationOnly",

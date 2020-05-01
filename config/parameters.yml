@@ -1,0 +1,3 @@
+parameters:
+    domain: 'symfony-boilerplate.local'
+    domain_api: 'api.%domain%'

@@ -16,7 +16,7 @@ class HomeController extends AbstractController
     public function index()
     {
         return [
-            'pages' => 'home',
+            'text' => 'Welcome on the homepage',
         ];
     }
 }

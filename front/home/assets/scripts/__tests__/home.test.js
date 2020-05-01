@@ -1,6 +1,6 @@
 'use strict'
 
-import Home from '../home'
+import Home from '../home.ts'
 
 const getInstance = () => {
 	const home = new Home()

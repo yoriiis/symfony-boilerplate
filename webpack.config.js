@@ -9,6 +9,10 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = (env, argv) => {
 	const isProduction = argv.mode === 'production'
+	const splitChunksProd = {
+		chunks: 'all',
+		name: false
+	}
 
 	return {
 		watch: !isProduction,
@@ -133,7 +137,7 @@ module.exports = (env, argv) => {
 			mergeDuplicateChunks: true,
 			occurrenceOrder: true,
 			providedExports: false,
-			splitChunks: true
+			splitChunks: isProduction ? splitChunksProd : false
 		}
 	}
 }

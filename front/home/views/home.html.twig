@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+    {{ include("@Public/build/templates/home-styles.html.twig") }}
+{% endblock %}
+
+{% block body %}
+    <h1>Home</h1>
+{% endblock %}
+
+{% block javascripts %}
+    {{ include("@Public/build/templates/home-scripts.html.twig") }}
+{% endblock %}

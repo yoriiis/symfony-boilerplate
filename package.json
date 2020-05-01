@@ -1,0 +1,154 @@
+{
+	"name": "symfony-boilerplate",
+	"version": "1.0.0",
+	"description": "Boilerplate to kickstart creating a project with Symfony configuration",
+	"homepage": "https://github.com/yoriiis/symfony-boilerplate",
+	"bugs": "https://github.com/yoriiis/symfony-boilerplate/issues",
+	"repository": "https://github.com/yoriiis/symfony-boilerplate.git",
+	"license": "MIT",
+	"author": "Yoriiis aka Joris DANIEL",
+	"files": [
+		"web"
+	],
+	"scripts": {
+		"build": "rm -rf ./web/dist/ && webpack --mode=production",
+		"start": "rm -rf ./web/dist/ && webpack --mode=development",
+		"test": "jest",
+		"test:coverage": "jest --coverage",
+		"test:eslint": "eslint . --ignore-pattern dist --ignore-pattern vendor --ignore-pattern public",
+		"test:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore vendor",
+		"test:stylelint": "stylelint './front/**/*.css'",
+		"test:watch": "jest --watchAll --coverage"
+	},
+	"babel": {
+		"plugins": [
+			"babel-plugin-dynamic-import-node"
+		],
+		"presets": [
+			[
+				"@babel/preset-env",
+				{
+					"targets": {
+						"node": "12.14.0"
+					}
+				}
+			]
+		]
+	},
+	"browserslist": [
+		"last 2 version"
+	],
+	"prettier": {
+		"printWidth": 100,
+		"overrides": [
+			{
+				"files": "*.md",
+				"options": {
+					"proseWrap": "preserve",
+					"tabWidth": 2,
+					"useTabs": false
+				}
+			}
+		]
+	},
+	"eslintConfig": {
+		"env": {
+			"browser": true,
+			"es6": true,
+			"jest": true,
+			"node": true
+		},
+		"parser": "babel-eslint",
+		"parserOptions": {
+			"ecmaFeatures": {
+				"impliedStrict": true,
+				"experimentalObjectRestSpread": true
+			},
+			"ecmaVersion": 6,
+			"sourceType": "module"
+		},
+		"extends": "standard",
+		"rules": {
+			"indent": [
+				"error",
+				"tab",
+				{
+					"ignoredNodes": [
+						"TemplateLiteral > *"
+					]
+				}
+			],
+			"no-console": 0,
+			"no-tabs": 0
+		},
+		"globals": {
+			"document": false,
+			"window": false
+		}
+	},
+	"stylelint": {
+		"extends": "stylelint-config-standard",
+		"rules": {
+			"indentation": 4,
+			"unit-whitelist": [
+				"%",
+				"px",
+				"deg",
+				"fr",
+				"vh",
+				"ms"
+			]
+		}
+	},
+	"jest": {
+		"moduleFileExtensions": [
+			"js",
+			"css"
+		],
+		"resetModules": true,
+		"verbose": true
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@babel/core": "^7.9.0",
+		"@babel/preset-env": "^7.9.5",
+		"babel-eslint": "^10.1.0",
+		"babel-loader": "^8.1.0",
+		"babel-plugin-dynamic-import-node": "^2.3.3",
+		"chunks-webpack-plugin": "^6.0.0",
+		"css-loader": "^3.5.2",
+		"eslint": "^6.8.0",
+		"eslint-config-standard": "^14.1.1",
+		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.1",
+		"expose-loader": "^0.7.5",
+		"file-loader": "^6.0.0",
+		"jest": "^25.4.0",
+		"markdownlint-cli": "^0.22.0",
+		"mini-css-extract-plugin": "^0.4.1",
+		"optimize-css-assets-webpack-plugin": "^5.0.3",
+		"postcss-custom-media": "^7.0.8",
+		"postcss-import": "^12.0.1",
+		"postcss-loader": "^3.0.0",
+		"postcss-nested": "^4.2.1",
+		"postcss-preset-env": "^6.7.0",
+		"prettier-eslint": "^9.0.1",
+		"prettier-stylelint": "^0.4.2",
+		"progress-bar-webpack-plugin": "^2.1.0",
+		"style-loader": "^1.1.4",
+		"stylefmt": "^6.0.3",
+		"stylelint": "^13.3.3",
+		"stylelint-config-recommended": "^3.0.0",
+		"stylelint-config-standard": "^20.0.0",
+		"svg-inline-loader": "^0.8.2",
+		"terser-webpack-plugin": "^2.3.5",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11",
+		"webpack-manifest-plugin": "^2.2.0"
+	},
+	"engines": {
+		"node": ">=12.14.0"
+	}
+}

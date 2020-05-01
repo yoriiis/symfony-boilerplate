@@ -133,7 +133,7 @@ module.exports = (env, argv) => {
 			mergeDuplicateChunks: true,
 			occurrenceOrder: true,
 			providedExports: false,
-			splitChunks: false
+			splitChunks: true
 		}
 	}
 }

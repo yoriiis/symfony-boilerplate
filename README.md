@@ -11,6 +11,16 @@ This is what I use for [my own project](https://www.npmjs.com/~yoriiis).
 
 Alternatively, download the project to start your own.
 
+The project includes following features:
+
+- Symfony `v5.0.8`
+- Twig
+- Api domain
+- Webpack (postCSS, Babel, Typescript)
+- Split chunks optimization
+- Jest
+- Linter (StyleLint, ESLint, MarkdownLint)
+
 ## License
 
 `symfonyBoilerplate` is licensed under the [MIT License](http://opensource.org/licenses/MIT).

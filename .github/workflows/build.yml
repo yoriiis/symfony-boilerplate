@@ -31,15 +31,15 @@ jobs:
           path: vendor
           key: ${{ runner.OS }}-build-${{ hashFiles('**/composer.lock') }}
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '7.2'
-
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: 12.14.0
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.2'
 
       - name: Install front dependencies
         run: npm ci

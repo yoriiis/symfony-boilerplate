@@ -32,7 +32,7 @@ module.exports = (env, argv) => {
 		module: {
 			rules: [
 				{
-					test: /\.(js|ts)$/,
+					test: /\.js$/,
 					include: path.resolve(__dirname, './front'),
 					use: [
 						{
@@ -78,7 +78,7 @@ module.exports = (env, argv) => {
 			]
 		},
 		resolve: {
-			extensions: ['.ts', '.js', '.css'],
+			extensions: ['.js', '.css'],
 			alias: {
 				shared: path.resolve(__dirname, './front/shared')
 			}
@@ -102,14 +102,10 @@ module.exports = (env, argv) => {
 			})
 		],
 		stats: {
-			assets: true,
 			colors: true,
 			hash: false,
 			timings: true,
-			chunks: false,
-			chunkModules: false,
 			modules: false,
-			children: false,
 			entrypoints: false,
 			excludeAssets: /.map$/,
 			assetsSort: '!size'

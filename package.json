@@ -9,16 +9,13 @@
 	"author": "Yoriiis aka Joris DANIEL",
 	"scripts": {
 		"build": "rm -rf ./web/dist/ && webpack --mode=production",
-		"build:types": "tsc --emitDeclarationOnly",
 		"start": "rm -rf ./web/dist/ && webpack --mode=development",
 		"test": "jest",
 		"test:coverage": "jest --coverage",
 		"test:eslint": "eslint . --ignore-pattern dist --ignore-pattern vendor --ignore-pattern public",
 		"test:markdown": "markdownlint '**/*.md' --ignore node_modules --ignore vendor",
 		"test:stylelint": "stylelint './front/**/*.css'",
-		"test:type-check": "tsc --noEmit",
-		"test:watch": "jest --watchAll --coverage",
-		"type-check:watch": "npm run type-check -- --watch"
+		"test:watch": "jest --watchAll --coverage"
 	},
 	"babel": {
 		"plugins": [
@@ -27,15 +24,7 @@
 		],
 		"presets": [
 			[
-				"@babel/preset-env",
-				{
-					"targets": {
-						"node": "12.14.0"
-					}
-				}
-			],
-			[
-				"@babel/typescript"
+				"@babel/preset-env"
 			]
 		]
 	},
@@ -109,13 +98,11 @@
 	"jest": {
 		"moduleFileExtensions": [
 			"js",
-			"ts",
 			"css"
 		],
 		"modulePaths": [
 			"./front"
 		],
-		"preset": "ts-jest/presets/js-with-babel",
 		"resetModules": true,
 		"verbose": true
 	},
@@ -124,7 +111,6 @@
 		"@babel/core": "^7.9.0",
 		"@babel/plugin-proposal-class-properties": "^7.8.3",
 		"@babel/preset-env": "^7.9.5",
-		"@babel/preset-typescript": "^7.9.0",
 		"babel-eslint": "^10.1.0",
 		"babel-loader": "^8.1.0",
 		"babel-plugin-dynamic-import-node": "^2.3.3",
@@ -136,7 +122,6 @@
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^4.2.1",
 		"eslint-plugin-standard": "^4.0.1",
-		"expose-loader": "^0.7.5",
 		"file-loader": "^6.0.0",
 		"jest": "^25.4.0",
 		"markdownlint-cli": "^0.22.0",
@@ -150,15 +135,10 @@
 		"prettier-eslint": "^9.0.1",
 		"prettier-stylelint": "^0.4.2",
 		"progress-bar-webpack-plugin": "^2.1.0",
-		"style-loader": "^1.1.4",
-		"stylefmt": "^6.0.3",
 		"stylelint": "^13.3.3",
-		"stylelint-config-recommended": "^3.0.0",
 		"stylelint-config-standard": "^20.0.0",
 		"svg-inline-loader": "^0.8.2",
 		"terser-webpack-plugin": "^2.3.5",
-		"ts-jest": "^25.4.0",
-		"typescript": "^3.8.3",
 		"webpack": "^4.43.0",
 		"webpack-cli": "^3.3.11",
 		"webpack-manifest-plugin": "^2.2.0"
